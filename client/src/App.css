@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+  position: relative;
+  min-height: 400px;
+}
+
+.noBooks {
+  color: #616161;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translatex(-50%);
+}
+
+.btn-floating {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+}
