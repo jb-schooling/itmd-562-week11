@@ -10,12 +10,7 @@ export function* createBookSaga(action) {
       author: action.book.bookAuthor,
       numPages: action.book.bookPages
     };
-    yield axios.post(
-      process.env.NODE_ENV === "production"
-        ? "https://jbailey-itmd-562-week11.herokuapp.com/"
-        : "/books/",
-      book
-    );
+    yield axios.post("/books/", book);
     yield put(actions.getBooksInit());
   } catch (errors) {
     yield console.log("ERROR", errors.response.data);
@@ -31,12 +26,7 @@ export function* updateBookSaga(action) {
       author: action.book.book.bookAuthor,
       numPages: action.book.book.bookPages
     };
-    yield axios.put(
-      process.env.NODE_ENV === "production"
-        ? "https://jbailey-itmd-562-week11.herokuapp.com/"
-        : "/books/" + action.book.bookID,
-      book
-    );
+    yield axios.put("/books/" + action.book.bookID, book);
     yield put(actions.getBooksInit());
   } catch (errors) {
     yield console.log("ERROR", errors.response.data);
@@ -47,11 +37,7 @@ export function* updateBookSaga(action) {
 export function* deleteBookSaga(action) {
   console.log(action);
   try {
-    yield axios.delete(
-      process.env.NODE_ENV === "production"
-        ? "https://jbailey-itmd-562-week11.herokuapp.com/"
-        : "/books/" + action.bookID
-    );
+    yield axios.delete("/books/" + action.bookID);
     // yield put(actions.getBookSuccess(response.data[0]));
   } catch (errors) {
     yield console.log("ERROR", errors.response.data);

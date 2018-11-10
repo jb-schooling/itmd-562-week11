@@ -5,11 +5,7 @@ import * as actions from "../actions";
 // GET BOOK
 export function* getBooksSaga(action) {
   try {
-    const response = yield axios.get(
-      process.env.NODE_ENV === "production"
-        ? "https://jbailey-itmd-562-week11.herokuapp.com/"
-        : "/books/"
-    );
+    const response = yield axios.get("/books/");
     yield console.log(response.data);
     yield put(actions.getBooksSuccess(response.data));
   } catch (errors) {

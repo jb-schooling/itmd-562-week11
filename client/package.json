@@ -28,5 +28,5 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "proxy": "https://jbailey-itmd-562-week11.herokuapp.com/"
+  "proxy": "https://jbailey-itmd-562-week11.herokuapp.com"
 }
