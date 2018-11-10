@@ -64,13 +64,13 @@ class App extends Component {
     const floatingButton = (
       <button
         onClick={this.activateForm}
-        className="btn-floating btn-large waves-effect waves-light blue-grey darken-1"
+        className="btn-floating btn-large waves-effect waves-light black"
       >
         <i className="material-icons">add</i>
       </button>
     );
     return (
-      <div className="grey lighten-2 App">
+      <div className="App">
         <Modal
           show={this.state.formActivated}
           backdropClicked={this.deactivateForm}
@@ -89,7 +89,7 @@ class App extends Component {
           deactivateForm={this.deactivateForm}
         />
         {floatingButton}
-        <Footer />
+        {/* <Footer /> */}
       </div>
     );
   }
